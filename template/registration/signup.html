@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% block navbar %} {% endblock %}
+
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2>Sign up as a {{ user_type }}</h2>
+      {% crispy form %}
+    </div>
+  </div>
+
+
+<style>
+.header{
+ background-image: url('https://c.pxhere.com/images/a0/80/63f5458e3280026f2fc3a88dda61-1418868.jpg!d');
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+}
+
+</style>
+
+{% endblock %}

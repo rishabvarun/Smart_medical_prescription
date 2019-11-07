@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+p{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+h1{
+  font-size: 40px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight:normal;
+}
+</style>
+  <h1><strong>My Details</strong></h1>
+
+  <p><strong>Name :</strong> {{ doctor.First_name}} {{doctor.Last_name }}</a></p>
+  <p><strong>Degree :</strong> {{ doctor.Degree }}</p>
+  <p><strong>Speciality :</strong> {{ doctor.Speciality }}</p> 
+  <p><strong>Hospital :</strong> {{ doctor.Hospital }}</p>  
+  
+
+{% endblock %}

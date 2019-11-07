@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+p{
+  font-size: 15px;
+}
+a { color: rgb(0, 0, 0); }
+a:hover { color: rgb(0, 0, 0); }
+</style>
+<h1>Prescription list of {{ patient }}</h1>
+
+{% if prescription_list %}<table class="table">
+    <tr><th>Title</th><th>Date</th><th>Disease</th><th>Medicine</th><th>Checked</th></tr>
+    {% for prescription in prescription_list %}
+    {% if user.is_doctor or user.is_patient %}
+    
+      <tr>
+      <td><a href="{% url 'prescription detail' pk=prescription.id %}" style="text-decoration: none;">{{ prescription.title }}</a></td><td>{{prescription.date}} </td>
+    <td>{{ prescription.disease}}</td>  <td>{{prescription.medicine}}</td><td>{{prescription.checked}}</td>
+    </tr>
+    {% endif %}
+    {% if user.is_pharmacist %}
+    <tr>
+    <td><a href="{% url 'pharma prescription' pk=prescription.id %}" style="text-decoration: none;">{{ prescription.title }}</a></td><td>{{prescription.date}} </td>
+    <td>{{ prescription.disease}}</td>  <td>{{prescription.medicine}}</td>  <td>{{prescription.checked}}</td>
+  </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+  {% else %}
+  {% if user.is_doctor or user.is_pharmacist %}
+    <p>There are no prescriptions for this patient.</p>
+  {% endif %} 
+  {% if user.is_patient %}
+    <p>You have no prescriptions</p>
+  {% endif %} 
+  
+  {% endif %}       
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+</div>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{%url 'home'%}">Smart Health System</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="dropdown">
+            <a
+              href=""
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              ><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="{%url 'login'%}">Doctor</a></li>
+              <li><a href="{%url 'login'%}">Pharmacist</a></li>
+              <li><a href="{%url 'login'%}">Patient</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <style>
+
+    a { color: rgb(240, 240, 243); }
+a:hover { color: rgb(0, 0, 0); }
+
+      .navbar {
+        margin-bottom: 0;
+      }
+
+      .jumbotron {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.jumbotron p {
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+}
+
+      body {
+  background: rgb(128, 0, 0);
+  color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2 {
+  font-weight: bold;
+}
+p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.btn-primary {
+  color: white;
+  background-color: rgb(128, 2, 2);
+  border-color: white;
+  margin-bottom: 5px;
+}
+.btn-primary:hover {
+  color: #132f63;
+  background-color: white;
+  border-color: white;
+}
+
+.navbar-inverse {
+  background: rgb(128, 0, 0);
+  border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+  background: #000000;
+}
+
+.dropdown-menu {
+  background: rgb(0, 0, 0);
+  border-radius: 0;
+  border: 0;
+}
+.dropdown-menu li a {
+  padding: 10px;
+}
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+  background: rgb(128, 0, 0);
+}
+  </style>
+
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome</h1>
+      <p>
+        Smart Health Care System for a Smarter World
+      </p>
+      <br />
+      <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'login'%}" role="button">Login</a>
+        <a class="btn btn-primary btn-lg" href="{%url 'patient signup'%}" role="button">Register</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <h3><a href="{%url 'patient signup'%}" style="text-decoration: none;">Patient</a></h3>
+        <p>
+          Our Goal is to provide a secure and smart health care to the patient. New Patients register here.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <h3><a href="{%url 'doctor signup'%}"  style="text-decoration: none;">Physician</a></h3>
+        <p>
+          New doctors register here.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <h3><a href="{%url 'pharmacist signup'%}" style="text-decoration: none;">Pharmacist</a></h3>
+        <p>
+          New pharmacists register here.
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+{% block info %}{%endblock%}

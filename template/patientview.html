@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+p{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+h1{
+  font-size: 40px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight:normal;
+}
+</style>
+  <h1><strong>My Details</strong></h1>
+
+  <p><strong>Name :</strong> {{ patient.First_Name}} {{patient.Last_Name }}</a></p>
+  <p><strong>Date of Birth :</strong> {{ patient.DOB }}</p>
+  <p><strong>Sex :</strong> {{ patient.sex }}</p>
+  <p><strong>Blood group :</strong> {{ patient.blood_group }}</p>
+      
+    
+    {% if patient.allergy != None %}
+    <p><strong>Allergies :</strong></p>
+    {% for x in patient.allergy.all %}
+    <p>{{x.name}}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if patient.genetic_disorder != None %}
+    <p><strong>Genetic Disorders :</strong></p>
+    {% for x in patient.genetic_disorder.all %}
+    <p>{{x.name}}</p>
+    {% endfor %}
+    {% endif %}
+
+{% endblock %}

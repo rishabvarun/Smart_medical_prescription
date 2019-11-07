@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% include crispy_tags %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    p {
+      font-size: 15px;
+      color: #000000;
+
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+      background-color: rgb(146, 34, 0);
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      text-decoration: none;
+      margin: 2px 2px;
+      
+      cursor: pointer;
+    }
+    </style>
+ 
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2 style="text-align: center;left: 50%;">Prescription </h2>
+      <div class='container'>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form|crispy}}
+        <input type="submit" class="btn btn-success" value='Add'></button>
+      </form>
+    </div>
+  </div>
+</div>
+</br>
+</br>
+</br>
+</br>
+
+{% endblock %}

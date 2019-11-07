@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    p{
+      font-size: 15px;
+    }
+    a { color: rgb(0, 0, 0); }
+    a:hover { color: rgb(0, 0, 0); }
+    </style>
+<h1>Doctor list</h1>
+
+{% if doctor_list %}
+<table class="table">
+  <tr><th>Doctor Name</th><th>Speciality</th></tr>
+    {% for doctor in doctor_list %}
+    <tr> 
+     <td>
+        {{ doctor.First_name }}
+      </td>
+        
+      <td>{{doctor.Speciality}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>There are no doctors.</p>
+  {% endif %}       
+{% endblock %}

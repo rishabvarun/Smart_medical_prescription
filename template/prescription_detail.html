@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+p{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+h1{
+  font-size: 40px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight:normal;
+}
+</style>
+  <h1><strong>Title: </strong>{{ prescription.title }}</h1>
+
+  <p><strong>Patient Name :</strong> {{ patient.First_Name}} {{patient.Last_Name }}</a></p>
+  <p><strong>Sex :</strong> {{ patient.sex }}</p>
+  <p><strong>Date :</strong> {{ prescription.date }}</p> 
+  <p><strong>Disease :</strong> {{ prescription.disease }}</p> 
+  <p><strong>Medicine :</strong> {{ prescription.medicine }}</p> 
+  <p><strong>Prescription :</strong> {{ prescription.prescription_text }}</p>  
+  <p><strong>Checked Status :</strong> {{ prescription.checked }}</p>  
+
+{% endblock %}

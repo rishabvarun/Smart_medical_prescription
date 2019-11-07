@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+p{
+    font-size: 15px;
+    
+}
+img {
+    max-width: 200px;
+  width: 200px;
+  max-height: 200px;
+}
+</style>
+{% if user.is_doctor %}
+    <div class="col-sm-4">
+        <a href="{% url 'doctor detail'%}"> <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v246-tent-33-business_2.jpg?auto=format&bg=F4F4F3&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1200&s=8971ccfcbd92e116699c4bc757860779" class="img-responsive" alt="Image ">
+        </a>
+        <p><strong>View My Details</p></strong>
+    </div>
+    <div class="col-sm-4"> 
+        <a href="{% url 'patient search'%}">
+                <img src="https://www.backgroundsy.com/file/large/magnifying-glass-isolated.jpg" class="img-responsive"  alt="Image ">
+        </a>
+        <p><strong>Search Patient</p></strong>   
+    </div>
+{% endif %}
+
+{% if user.is_patient %}
+<div class="col-sm-4">
+        <a href="{% url 'patient detail'%}"> <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v246-tent-33-business_2.jpg?auto=format&bg=F4F4F3&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1200&s=8971ccfcbd92e116699c4bc757860779" class="img-responsive" s alt="Image ">
+        </a>
+        <p><strong>View My Details</p></strong>
+    </div>
+    <div class="col-sm-4"> 
+        <a href="{% url 'my doctors'%}">
+                <img src="https://wallpapercave.com/wp/ThAOKju.jpg" class="img-responsive"  alt="Image ">
+        </a>
+        <p><strong>View My Doctors</p></strong>   
+    </div>
+    <div class="col-sm-4"> 
+            <a href="{% url 'p list'%}">
+                    <img src="https://howtoinvestigate.com/images/list.jpg" class="img-responsive"  alt="Image ">
+            </a>
+            <p><strong>View My Prescriptions</p></strong>   
+        </div>
+{% endif %}
+
+{% if user.is_pharmacist %}
+
+    <div class="col-sm-4"> 
+        <a href="{% url 'patient search'%}">
+                <img src="https://www.backgroundsy.com/file/large/magnifying-glass-isolated.jpg" class="img-responsive" alt="Image ">
+        </a>
+        <p><strong>Search Patient</p></strong>   
+    </div>
+{% endif %}
+
+{% endblock %}

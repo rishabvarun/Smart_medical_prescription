@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% include crispy_tags %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+p{
+  font-size: 15px;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2> Patient detail update </h2>
+      <br>
+      <form method="post" >
+        {% csrf_token %}
+        {{form.as_p}}       
+        
+        <button type="submit" class="btn btn-success">Update</button>
+      </form>
+    </div>
+  </div>
+
+</br>
+</br>
+</br>
+</br>
+
+
+{% endblock %}

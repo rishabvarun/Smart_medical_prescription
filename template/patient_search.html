@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+p {
+  font-size: 15px;
+  color: #000000;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: rgb(146, 34, 0);
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-decoration: none;
+  margin: 2px 2px;
+  
+  cursor: pointer;
+}
+</style>
+<style>
+      
+        img {
+            max-width: 200px;
+          width: 200px;
+          max-height: 200px;
+        }
+        </style>
+    <form class='' method='GET'>
+        <input type='int' name='q' value='{{ request.GET.q }}'>
+        <input class="button" type='submit' value="Search Patient">
+        
+    </form>
+</br>
+
+    {% if patient is not None %}
+      <p><strong>Patient Name :</strong> {{ patient.First_Name}} {{patient.Last_Name}}</p>
+      <p><strong>Sex :</strong> {{ patient.sex }}</p>
+      <p><strong>Date :</strong> {{ patient.DOB }}</p> 
+      <p><strong>Blood group :</strong> {{ patient.blood_group }}</p> 
+    
+    {% if patient.allergy != None %}
+    <p><strong>Allergies :</strong></p>
+    {% for x in patient.allergy.all %}
+    <p>{{x.name}}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if patient.genetic_disorder != None %}
+    <p><strong>Genetic Disorders :</strong></p>
+    {% for x in patient.genetic_disorder.all %}
+    <p>{{x.name}}</p>
+    {% endfor %}
+
+    {% if user.is_doctor %}
+    <div>
+    <div class="col-sm-4">
+        <a href="{% url 'prescription create'%}"> <img src="https://content.fortune.com/wp-content/uploads/2019/04/brb05.19.plus_.jpg" class="img-responsive"  alt="Image ">
+        </a>
+        <p><strong>Add Prescription</p></strong>
+    </div>
+
+    <div id='1' class="col-sm-4">
+        <a href="{% url 'prescription'%}"><img src="https://howtoinvestigate.com/images/list.jpg" class="img-responsive"
+           alt="Image ">
+        </a>
+        <p><strong>View Prescription List</p></strong>
+    </div>
+
+    <div id='1' class="col-sm-4">
+        <a href="{% url 'patient update'%}"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROwUUkQtQWi5ttP8cJSkAbk9mxIyIjufbp65Le6421eaypG1wc" class="img-responsive" alt="Image ">
+        </a>
+        <p><strong>Update Patient details</p></strong>
+    </div>
+    </div>
+    
+    {% endif %}
+
+    {% if user.is_pharmacist %}
+    <div>    
+
+    <div class="col-sm-4">
+        <a href="{% url 'prescription'%}"> <img src="https://howtoinvestigate.com/images/list.jpg" class="img-responsive" style="height: 200px;
+            width: 500px;" alt="Image ">
+        </a>
+        <p><strong>View Prescription List</p></strong>
+    </div>
+
+        
+    {% endif %}
+    {% endif %}
+
+    {% else %}
+    {% if id != None or id != ''%}
+     <p><strong>Patient with does not exist </strong></p>
+    {% endif %}
+    {% endif %}
+      
+
+{% endblock %}
+
