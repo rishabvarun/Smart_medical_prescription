@@ -7,4 +7,4 @@ adds a prescription the checked status of the presctiprion is false and later wh
 the prescription the status of the prescription is set to true).
 
 This system prevents the patient form acquiring multiple prescriptions for the same disease thereby preventing him from acquring narcotic
-drugs illegaly leading to adverse drug abuse (ADE).
+drugs illegaly leading to adverse drug effects (ADE) due to drug abuse.
