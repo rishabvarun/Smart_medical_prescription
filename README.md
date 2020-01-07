@@ -14,4 +14,4 @@ The program depends on the following libraries-
        2. pip install django-crispy-forms**
      
      
-    
+NOTE: This project also contains code to read from fingerprint sensor and rfid sensor which require nodemcu hardware components which need not be necessary you can edit the code to take input from user instead of rfid or fingerprint sensor.   
