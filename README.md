@@ -1,5 +1,4 @@
-# medical-system
-A smart medical prescription system
+# Smart Medical Prescription System
 
 A smart medical prescription system that uses Finger print authentication (for doctor and pharmacists), and RFID technology for patients
 smart health card. The system includes 3 types of users patient, physician and pharmacist. The system stores the patients health details
