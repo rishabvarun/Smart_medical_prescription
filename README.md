@@ -9,7 +9,7 @@ the prescription the status of the prescription is set to true).
 This system prevents the patient form acquiring multiple prescriptions for the same disease thereby preventing him from acquring narcotic
 drugs illegaly leading to adverse drug effects (ADE) due to drug abuse.
 
-The program depends on the following libraries-
+The program depends on the following libraries-     
      **1. pip install django        
        2. pip install django-crispy-forms**
      
